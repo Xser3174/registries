@@ -10,6 +10,10 @@ use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Disneyplus;
+use App\Exports\DisneyplusExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 class RegisterController extends Controller
 {
     /**
@@ -140,4 +144,22 @@ class RegisterController extends Controller
     return redirect()->route('list');
 
     }
+    public function blah(Request $request,$id)
+    {
+        //
+        $registery=DB::table('registries')
+                    ->where('id',$id)
+                    ->update(['deleted_at'=>Carbon::now()]);
+        
+        return redirect()->route('list');
+        
+        
+    }
+
+    
+
+public function export() 
+{
+        return Excel::download(new DisneyplusExport, 'disney.xlsx');
+}
 }

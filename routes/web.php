@@ -33,4 +33,5 @@ Route::post('/cat','RegisterController@store')->name('register');
 Route::get('/regist','RegisterController@index')->name('list');
 Route::get('/regist/{id}','RegisterController@edit')->name('editer');
 Route::put('/registt/{id}','RegisterController@update')->name('update');
-Route::get('/delete/{id}','RegisterController@destroy')->name('fdelete');
+Route::get('/delete/{id}/forcedelete','RegisterController@destroy')->name('fdelete');
+Route::get('/blah/{id}/blah','RegisterController@blah')->name('delete');

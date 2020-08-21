@@ -42,7 +42,7 @@
                     <td>{{ $data->updated_at }}</td>
                     <td>{{ $data->deleted_at }}</td>
                     <td><a href="{{route('editer', $data->id)}}">Edit</a></td>
-                    <td><a >Delete</a></td>
+                    <td><a href="{{route('delete',$data->id)}}">Delete</a></td>
                     <td><a href="{{route('fdelete',$data->id)}}">Force Delete</a></td>
 
                     
